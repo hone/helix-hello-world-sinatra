@@ -1,0 +1,14 @@
+{
+  "name": "Helix Hello World Sinatra",
+  "description": "Hello World of Using Helix inside a Sinatra App",
+  "repository": "https://github.com/hone/helix-hello-world-sinatra",
+  "keywords": ["ruby", "rust", "helix"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/emk/heroku-buildpack-rust"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
