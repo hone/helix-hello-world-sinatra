@@ -1,0 +1,29 @@
+GIT
+  remote: git://github.com/tildeio/helix.git
+  revision: 4d5342326026439459e976d7c6c3df9ffa7ba1de
+  specs:
+    helix_runtime (0.5.0)
+      rake (~> 10.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (1.6.5)
+    rack-protection (1.5.3)
+      rack
+    rake (10.5.0)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  helix_runtime!
+  sinatra
+
+BUNDLED WITH
+   1.13.6
