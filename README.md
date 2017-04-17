@@ -2,20 +2,12 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Deployment to Heroku
-Helix created libraries are put into `crates/`.
-
 In this demo app, we'll be using [`turbo_blank`](https://github.com/tildeio/helix/tree/master/examples/turbo_blank) from `helix` examples.
 
 In order to get this to build on Heroku, it has to compile the rust code. We can do this by hooking into the `assets:precompile` rake task.
 
 ```ruby
-task "assets:precompile" do
-  require 'helix_runtime/build_task'
-  HelixRuntime::BuildTask.new("turbo_blank")
-  Dir.chdir "crates/turbo_blank" do
-    Rake::Task["build"].invoke
-  end
-end
+task "assets:precompile" => "build"
 ```
 
 You'll need a heroku app to deploy to if you don't have one already.
@@ -30,15 +22,20 @@ With that, we can deploy. On Heroku, we'll need to setup the Rust toolchain and 
 RUST_SKIP_BUILD=1
 ```
 
-Then add the buildpack.
+Then add the buildpack to the first position
 
 ```
-$ heroku buildpacks:add https://github.com/emk/heroku-buildpack-rust
+$ heroku buildpacks:add https://github.com/emk/heroku-buildpack-rust --index 1
 ```
 
-Next, we'll need the Heroku Ruby buildpack to do the normal Ruby bits.
+Next, we'll need the Heroku Ruby buildpack to do the normal Ruby bits, if it's not already set.
 
 ```
 $ heroku buildpacks:add heroku/ruby
+```
+
+Finally deploy:
+
+```
 $ git push heroku master
 ```
