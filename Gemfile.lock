@@ -1,15 +1,16 @@
 GIT
+  remote: git://github.com/hone/turbo_blank.git
+  revision: 2e3e419a755576682e49fb8ea083ced1a230449f
+  specs:
+    turbo_blank (0.1.0)
+      helix_runtime
+
+GIT
   remote: git://github.com/tildeio/helix.git
   revision: 4d5342326026439459e976d7c6c3df9ffa7ba1de
   specs:
     helix_runtime (0.5.0)
       rake (~> 10.0)
-
-PATH
-  remote: crates/turbo_blank
-  specs:
-    turbo_blank (0.1.0)
-      helix_runtime
 
 GEM
   remote: https://rubygems.org/
