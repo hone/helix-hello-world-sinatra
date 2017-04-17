@@ -1,5 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "sinatra"
-gem 'helix_runtime', github: 'tildeio/helix'
-gem "turbo_blank", github: "hone/turbo_blank"
+gem 'sinatra'
+gem 'helix_runtime', '0.5.0.alpha.1'
